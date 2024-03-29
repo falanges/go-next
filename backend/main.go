@@ -20,7 +20,7 @@ func main() {
     r := mux.NewRouter()
     // Add your routes as needed
 		r.HandleFunc("/api/v1/hello", func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte("Hello, World!"))
+			w.Write([]byte("Hello, Backend!"))
 		})
 
     srv := &http.Server{
