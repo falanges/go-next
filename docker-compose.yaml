@@ -1,0 +1,19 @@
+version: "3"
+services:
+  backend:
+    build: ./backend
+    image: backend:v1
+    ports:
+      - 666:666
+
+  web-api-requester:
+    build: ./web-api-requester
+    image: web-api-requester:v1
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+networks:
+  default:
+    driver: bridge
